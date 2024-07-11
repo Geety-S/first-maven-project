@@ -12,16 +12,15 @@ public class CrossBrowsingHandling {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the browser type");
-        String browserType = "chrome";
+        String browserType = scanner.next();
 
         WebDriver driver;
 
         if (browserType.equals("chrome")){
             driver = new ChromeDriver();
-        }
-        else if (browserType.equals("firefox")){
+        } else if (browserType.equals("firefox")){
             driver = new FirefoxDriver();
-        } else if (browserType.equalsIgnoreCase("edge")){
+        } else if (browserType.equals("edge")){
             driver = new EdgeDriver();
         }else {
             throw new RuntimeException("Wrong driver");
